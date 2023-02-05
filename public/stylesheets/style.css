@@ -1,0 +1,202 @@
+body {
+  margin: 0px;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: linear-gradient(rgb(92, 54, 133), rgb(109, 81, 139));
+  color: #f3edf7;
+}
+
+header h1 {
+  margin: 30px 0px 10px 0px;
+  font-size: 2.5em;
+}
+
+main {
+  width: 70%;
+  margin-right: auto;
+  margin-left: auto;
+  border-bottom: solid;
+  border-color: #e5e5e5;
+}
+
+#contacts-view {
+  height: fit-content;
+}
+
+#utility-bar {
+  height: 50px;
+  background-color: #eaeaeb;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  border-radius: 5px;
+}
+
+#utility-bar select, #utility-bar input {
+  flex-grow: 1;
+  margin-right: 20px;
+}
+
+#utility-bar div {
+  flex-grow: 2;
+  margin-right: 20px;
+  margin-left: 20px;
+}
+
+a {
+  border: solid;
+  border-color: rgb(141 94 190);
+  box-sizing: border-box;
+  padding: 4px;
+  border-radius: 8px;
+  color: rgb(141 94 190);
+}
+
+div.contact {
+  font-size: .8em;
+  width: 200px;
+  margin-right: 0px;
+  margin-left: 10px;
+  border-bottom: solid;
+  border-color: #e5e5e5;
+  display: inline-block;
+}
+
+.contact h2 {
+  font-size: 2em;
+}
+
+.contact h3, .contact p {
+  margin: 0px;
+}
+
+p.tags {
+  margin-top: 10px;
+}
+
+.contact div {
+  height: 40px;
+  box-sizing: border-box;
+  padding-top: 15px;
+}
+
+#no-contacts {
+  height: 100px;
+}
+
+#no-contacts p {
+  margin-top: 35px;
+  margin-right: auto;
+  margin-left: auto;
+  width: fit-content;
+}
+
+#no-contacts a {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  width: fit-content;
+}
+
+#create-edit-contact > div {
+
+  border-bottom: solid;
+  border-color: #e5e5e5;
+}
+
+#create-edit-contact h1 {
+  width: fit-content;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 10px;
+}
+
+#create-edit-contact form {
+  display: grid;
+  grid-template-rows: repeat(5, 1fr);
+  grid-template-columns: 1fr 2fr 4fr 1fr;
+}
+
+#create-edit-contact form div#main-controls {
+  grid-column: 3 / 4;
+  display: flex;
+  flex-direction: row;
+}
+
+#create-edit-contact label {
+  margin: 10px 10px 0px auto;
+  padding: 3px;
+  grid-column: 2 / 3;
+}
+
+#create-edit-contact div {
+  grid-column: 3 / 4;
+}
+
+#create-edit-contact input[name] {
+    display: block;
+    width: 100%;
+    margin: 10px 0px 0px 0px;
+    background-color: white;
+    border: solid;
+    border-color: #e5e5e5;
+    border-radius: 5px;
+    padding: 3px;
+}
+
+#create-edit-contact div small {
+  font-size: .7em;
+  display: none;
+}
+
+#create-edit-contact form div#main-controls input {
+  flex-grow: 1;
+  margin: 5px 0px;
+  background-color: white;
+  border: solid;
+  border-color: rgb(141 94 190);
+  box-sizing: border-box;
+  padding: 4px;
+  border-radius: 8px;
+  color: rgb(141 94 190);
+}
+
+#create-edit-contact form div#main-controls [value='Cancel'] {
+  margin-left: 10px;
+}
+
+#create-edit-contact input.invalid {
+  border-color: rgb(252, 85, 85);
+}
+
+#create-edit-contact label.invalid {
+  color: rgb(252, 85, 85);
+}
+
+#create-edit-contact div small.invalid {
+  font-size: .7em;
+  display: block;
+  color: rgb(252, 85, 85);
+}
+
+footer p {
+  margin-right: auto;
+  margin-left: auto;
+  width: fit-content;
+}
+
+#no-contacts.hide {
+  display: none;
+}
+
+#contacts-view.hide {
+  display: none;
+}
+
+#create-edit-contact.hide {
+  display: none;
+}

@@ -1,0 +1,65 @@
+[
+  {
+    "full_name": "Manwe",
+    "phone_number": "54545454",
+    "email": "KingAinur@gmail.com",
+    "tags": "ainur",
+    "id": 1
+  },
+  {
+    "full_name": "Thingol",
+    "phone_number": "5035555555",
+    "email": "SindarKing@gmail.com",
+    "tags": "king, elf, sindar",
+    "id": 2
+  },
+  {
+    "full_name": "Melkor",
+    "phone_number": "0003334444",
+    "email": "CheifEnemy@gmail.com",
+    "tags": "ainur, enemy",
+    "id": 3
+  },
+  {
+    "full_name": "Feanor",
+    "phone_number": "3333333333",
+    "email": "NoldarLord@gmail.com",
+    "tags": "elf, noldor",
+    "id": 4
+  },
+  {
+    "full_name": "Sauron",
+    "phone_number": "8888888888",
+    "email": "OtherEnemy@gmail.com",
+    "tags": "maiar, enemy",
+    "id": 6
+  },
+  {
+    "full_name": "Galadriel",
+    "phone_number": "asdfasdfa",
+    "email": "NoldorLady@gmail.com",
+    "tags": "elf, noldor",
+    "id": 7
+  },
+  {
+    "full_name": "Turgon",
+    "phone_number": "34343433",
+    "email": "GondalinKing@gmail.com",
+    "tags": "king, elf, noldor",
+    "id": 8
+  },
+  {
+    "full_name": "Frodo",
+    "phone_number": "234234234",
+    "email": "ShireGuy@gmail.com",
+    "tags": "hobbit",
+    "id": 9
+  },
+  {
+    "full_name": "Sam",
+    "phone_number": "345345",
+    "email": "sam@wise.com",
+    "tags": "hobbit",
+    "id": 10
+  }
+]

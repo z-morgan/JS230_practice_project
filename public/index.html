@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Contact Manager</title>
+  <script src="/javascripts/jquery.js"></script>
+  <script src="/javascripts/handlebars.js"></script>
+  <link rel='stylesheet' href='stylesheets/style.css'>
+  <script type='text/javascript' src='javascripts/contacts.js'></script>
+
+  <script id='contacts-template' type='text/x-handlebars'>
+    {{#each contacts}}
+      {{> contact}}
+    {{/each}}
+  </script>
+
+  <script id='contact-template' type='text/x-handlebars'>
+    <div class='contact' data-id='{{id}}'>
+      <h2>{{full_name}}</h2>
+      <h3>Phone Number:</h3>
+      <p>{{phone_number}}</p>
+      <h3>Email:</h3>
+      <p>{{email}}</p>
+      <p class='tags'>{{tags}}<span class='additional-tags'><span></p>
+      <div>
+        <a class='edit-button'>Edit</a>
+        <a class='delete-button'>Delete</a>
+      </div>
+    </div>
+  </script>
+</head>
+<body>
+  <header>
+    <h1>Contact Manager</h1>
+    <p>Using Handlebars and Vanilla JavaScript</p>
+  </header>
+  <main>
+    <div id='contacts-view'>
+      <div id='utility-bar'>
+        <div>
+          <a class='add-button'>Add Contact</a>
+        </div>
+        <select>
+          <option value='Any tags'>Any tags</option>
+        </select>
+        <input type='text' placeholder='Search Contacts'>
+      </div>
+      <div id='no-contacts' class='hide'>
+        <p>You don't have any contacts yet.</p>
+        <a class='add-button'>Add Contact</a>
+      </div>
+    </div>
+
+    <div id='create-edit-contact' class='hide'>
+      <div>
+        <h1>Create Contact</h1>
+      </div>
+      <form novalidate>
+        <label for='full_name'>Full name:</label>
+        <div>
+          <input id='full_name' type='text' name='full_name' required>
+          <small>Please enter a name</small>
+        </div>
+        <label for='email'>Email address:</label>
+        <div>
+          <input id='email' type='email' name='email' required>
+          <small>Please enter a valid email address</small>
+        </div>
+        <label for='phone_number'>Telephone number:</label>
+        <div>
+          <input id='phone_number' type='text' name='phone_number' required>
+          <small>Please enter a name</small>
+        </div>
+        <label for='tags'>Tags:</label>
+        <div>
+          <input id='tags' type='text' name='tags'>
+        </div>
+        <div id='main-controls'>
+          <input type='submit' value='Submit'>
+          <input type='reset' value='Cancel'>
+        </div>
+      </form>
+    </div>
+
+  </main>
+  <footer>
+    <p>Created by Zach Morgan - JS230 practice project</p>
+  </footer>
+</body>
+</html>

@@ -1,9 +1,4 @@
-document.addEventListener('DOMContentLoaded', async () => {
-  let response = await fetch('http://localhost:3000/api/contacts', {method: 'GET'});
-  let contacts = await response.json();
-
-  new ContactManager(contacts);
-});
+'use strict';
 
 class FormValidator {
   constructor(form) {
@@ -14,7 +9,7 @@ class FormValidator {
 
   addValidationHandlers() {
     for (let input of this.inputs) {
-      input.addEventListener('invalid', event => {
+      input.addEventListener('invalid', () => {
         input.classList.add('invalid');
         input.parentNode.previousElementSibling.classList.add('invalid');
         input.nextElementSibling.classList.add('invalid');
@@ -57,7 +52,7 @@ class ContactManager {
     Array.from(document.querySelectorAll('.contact')).forEach(contact => {
       contact.remove();
     });
-  
+
     let contactsHTML = this.HTMLTemplates['contacts-template']({ contacts });
     this.contactsView.insertAdjacentHTML('beforeend', contactsHTML);
   
@@ -105,7 +100,7 @@ class ContactManager {
 
       event.preventDefault();
 
-      this.form.previousElementSibling.firstElementChild.textContent = 'Edit Contact'
+      this.form.previousElementSibling.firstElementChild.textContent = 'Edit Contact';
       let id = event.target.parentNode.parentNode.dataset.id;
       this.populateForm(this.contacts.find(contact => contact.id === Number(id)));
       this.form.setAttribute('data-contact-id', id);
@@ -157,9 +152,9 @@ class ContactManager {
       let updatedContact = await response.json();
 
       let contactIndex;
-      this.contacts.forEach((contact, i) => {
+      this.contacts.forEach((contact, idx) => {
         if (contact.id === updatedContact.id) {
-          contactIndex = i;
+          contactIndex = idx;
         }
       });
       this.contacts[contactIndex] = updatedContact;
@@ -189,7 +184,7 @@ class ContactManager {
 
   addFormCancel() {
     this.form.addEventListener('reset', () => {
-      this.form.previousElementSibling.firstElementChild.textContent = 'Create Contact'
+      this.form.previousElementSibling.firstElementChild.textContent = 'Create Contact';
       this.form.removeAttribute('data-contact-id');
       this.showContactsView(true);
     });
@@ -260,19 +255,19 @@ class ContactManager {
       option.value = tag;
       option.textContent = tag;
       select.appendChild(option);
-    })
+    });
   }
 
   addTagFilter() {
     let select = document.querySelector('select');
-    select.addEventListener('change', event => {
+    select.addEventListener('change', () => {
       if (select.value === 'Any tags') {
         this.renderContacts(this.contacts);
       } else {
         let hits = this.contacts.filter(contact => {
           return contact.tags.split(', ').includes(select.value);
         });
-  
+
         this.renderContacts(hits);
       }
 
@@ -286,3 +281,10 @@ class ContactManager {
     option.selected = 'selected';
   }
 }
+
+document.addEventListener('DOMContentLoaded', async () => {
+  let response = await fetch('http://localhost:3000/api/contacts', {method: 'GET'});
+  let contacts = await response.json();
+
+  new ContactManager(contacts);
+});
